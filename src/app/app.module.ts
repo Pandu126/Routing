@@ -10,6 +10,10 @@ import { CategoriesComponent } from './categories/categories.component';
 import { AboutComponent } from './about/about.component';
 import { AuthService } from './services/auth.services';
 import { AuthGuardService } from './services/auth-guard.services';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { UserResolveService } from './services/user-resolve.service';
+import { UserService } from './services/user.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,14 @@ import { AuthGuardService } from './services/auth-guard.services';
     LoginComponent,
     HomeComponent,
     CategoriesComponent,
-    AboutComponent
+    AboutComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,FormsModule
   ],
-  providers: [AuthService, AuthGuardService],
+  providers: [AuthService, AuthGuardService, UserResolveService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
