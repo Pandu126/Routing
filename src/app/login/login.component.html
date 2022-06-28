@@ -1,1 +1,27 @@
-<p>login works!</p>
+<h2>login View</h2>
+
+<form action="" class="col-md-4">
+  <div class="form-outline mb-4">
+    <label class="form-label" for="emailInput">Email Address</label>
+    <input
+      type="email"
+      class="form-control"
+      placeholder=" Enter email address"
+      required
+    />
+  </div>
+  <div class="form-outline mb-4">
+    <label class="form-label" for="passwordInput">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Enter your password"
+    />
+  </div>
+  <div>
+    <a href="">Forgot Password?</a>
+    <button class="btn btn-primary" style="Float:right" (click)="loginClick()">
+      Login
+    </button>
+  </div>
+</form>

@@ -1,0 +1,16 @@
+<div class="container">
+  <!-- <a routerLinkActive="active" routerLink="/login">Login</a> | -->
+
+  <a routerLinkActive="active" routerLink="home">Home</a> |
+  <a routerLinkActive="active" routerLink="/categories">Categories</a> |
+
+  <a routerLinkActive="active" routerLink="/about">About</a>
+
+  <div style="Float:right">
+    <button class="btn btn-primary mx-3" (click)="onLogInClick()">Login</button>
+
+    <button class="btn btn-danger" (click)="onLogoutClick()">Logout</button>
+  </div>
+  <hr />
+  <router-outlet></router-outlet>
+</div>
