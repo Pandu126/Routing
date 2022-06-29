@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  @Input() editUserDetails:any;
+  @Output() updateUser: EventEmitter<any> = new EventEmitter();
 
+  // user:{id:string; name:string; age:number; gender:string};
+  constructor() { }
   ngOnInit(): void {
+    console.log(this.editUserDetails);
   }
 
+  updateUserDetails(){
+    this.updateUser.emit(this.editUserDetails);
+  }
 }

@@ -3,12 +3,16 @@ export class UserService{
         if(id==='1'){
             return{
                 id:'1',
-                name:'Leela'
+                name:'Leela',
+                age:54,
+                gender:'male'
             }
         }else{
             return{
-                id:'1',
-                name:'Krishna'
+                id:'2',
+                name:'krishna',
+                age:54,
+                gender:'male'
             }
         }
     }

@@ -1,1 +1,48 @@
-<p>user works!</p>
+Componnet Interaction:
+<div>
+    <diV class="form-group">
+      <label for="">Id:</label>
+      <input type="text" class="form-control" (input)="updateUserDetails()" [(ngModel)]="editUserDetails.id" />
+    </diV>
+    <diV class="form-group">
+      <label for="">Name:</label>
+      <input
+        type="text"
+        (input)="updateUserDetails()"
+        class="form-control"
+        [(ngModel)]="editUserDetails.name"
+      />
+    </diV>
+    <div class="form-group">
+      <label for="">Age</label>
+      <input type="text" class="form-control" (input)="updateUserDetails()" [(ngModel)]="editUserDetails.age">
+  </div>
+  <div class="form-group">
+      <label for="">Gender</label>
+      <input type="text" class="form-control" (input)="updateUserDetails()" [(ngModel)]="editUserDetails.gender">
+  </div>
+  </div>
+  
+<!-- <table class="table table-bordered table-striped table-hover text-center">
+    <thead class="text-center text-primary">
+       <th colspan="2">Details</th>
+    </thead>
+    <tbody class="text-primary">
+       <tr>
+           <td>ID</td>
+           <td>{{editUserDetails.id}}</td>
+       </tr>
+       <tr>
+           <td>Name</td>
+           <td>{{editUserDetails.name}}</td>
+       </tr>
+       <tr>
+           <td>Age</td>
+           <td>{{editUserDetails.age}}</td>
+       </tr>
+       <tr>
+           <td>Gender</td>
+           <td>{{editUserDetails.gender}}</td>
+       </tr>
+    </tbody>
+   </table> -->

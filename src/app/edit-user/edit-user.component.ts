@@ -7,8 +7,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./edit-user.component.css'],
 })
 export class EditUserComponent implements OnInit {
-  user: { id: string; name: string };
-  editUserDetails: { id: string; name: string };
+  user: { id: string; name: string;age:number; gender:string };
+  editUserDetails: { id: string; name: string;age:number; gender:string };
+  editUserDetailsNew : any;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -18,8 +19,14 @@ export class EditUserComponent implements OnInit {
       this.user = {
         id: data['user']['id'],
         name: data['user']['name'],
+        age:data['user']['age'],
+        gender:data['user']['gender']
       };
       this.editUserDetails = { ...this.user };
+      this.editUserDetailsNew ={...this.editUserDetails};
     });
+  }
+  getUpdatedDetails(e:any){
+    this.editUserDetails = e;
   }
 }
