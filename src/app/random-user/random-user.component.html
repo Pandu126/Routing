@@ -1,0 +1,38 @@
+<div class="text-center">
+  <img style="border-radius: 50%" [src]="post?.picture?.medium" alt="NA" />
+</div>
+
+<table
+  *ngIf="post"
+  class="table table-bordered table-striped table-danger table-hover"
+>
+  <thead class="text-center text-primary">
+    <th colspan="2">Details</th>
+  </thead>
+  <tbody class="text-primary">
+    <tr>
+      <td>Name</td>
+      <td>
+        {{
+          post?.name?.title + ". " + post?.name?.first + " " + post?.name?.last
+        }}
+      </td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>{{ post?.gender | titlecase }}</td>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td>{{ post?.dob?.date | date }}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{ post?.email }}</td>
+    </tr>
+    <tr>
+      <td>Country</td>
+      <td>{{ post?.location?.country }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -5,17 +5,29 @@ import { CategoriesComponent } from './categories/categories.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { RandomUserComponent } from './random-user/random-user.component';
 import { AuthGuardService } from './services/auth-guard.services';
 import { UserResolveService } from './services/user-resolve.service';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
+  {
+    path: 'home',
+    component: HomeComponent,
+    resolve: { myVal: UserResolveService },
+    canActivate: [AuthGuardService],
+  },
   { path: 'login', component: LoginComponent },
+  {
+    path: 'randomUser',
+    component: RandomUserComponent,
+    // canActivate: [AuthGuardService],
+  },
+
   { path: 'about', component: AboutComponent },
   {
     path: 'editUser',
     component: EditUserComponent,
-    resolve: { user: UserResolveService },
+    resolve: { myVal: UserResolveService },
     canActivate: [AuthGuardService],
   },
   {

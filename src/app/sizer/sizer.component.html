@@ -1,0 +1,10 @@
+<!-- <div>
+    <button type="button" (click)="dec()">-</button>
+    <button type="button" (click)="inc()">+</button>
+</div> -->
+
+<div>
+    <button class="btn btn-info" type="button" (click)="dec()" title="smaller">-</button>
+    <span [style.font-size.px]="size">{{size}}px</span>
+    <button class="btn btn-info mx-2" type="button" (click)="inc()" title="bigger">+</button>
+  </div>

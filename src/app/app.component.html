@@ -5,18 +5,26 @@
 
   <a routerLinkActive="active" routerLink="/categories">Categories</a> |
 
-  <a routerLinkActive="active" routerLink="/editUser">Edit- User</a>|
+  <a routerLinkActive="active" routerLink="/editUser">User Profile</a>|
+
+  <a routerLinkActive="active" routerLink="/randomUser">Random Profile</a>|
 
   <a routerLinkActive="active" routerLink="/about">About</a>
 
   <div style="float: right">
-    <button *ngIf="isButtonVisible" class="btn btn-primary mx-3" (click)="onLogInClick()">Login</button>
-
+    <button
+      *ngIf="isButtonVisible"
+      class="btn btn-primary mx-3"
+      (click)="onLogInClick()"
+    >
+      Login
+    </button>
     <button class="btn btn-danger" (click)="onLogoutClick()">Logout</button>
   </div>
   <hr />
   <div>
-    <router-outlet></router-outlet>
+    <app-sizer [(size)]="fontSizePx" style="float: right"></app-sizer>
+    <div [style.font-size.px]="fontSizePx"><router-outlet></router-outlet></div>
   </div>
   <div class="my-3 mt-5 text-center">
     <hr />

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,9 @@ import { FormsModule } from '@angular/forms';
 import { AdDirective } from './directives/ad.directive';
 import { AdBannerComponent } from './dynamicComponents/ad-banner.component';
 import { adService } from './services/ad.service';
+import { SizerComponent } from './sizer/sizer.component';
+import { RandomUserComponent } from './random-user/random-user.component';
+import { RandomUser } from './services/randomUser.service';
 
 @NgModule({
   declarations: [
@@ -28,13 +32,19 @@ import { adService } from './services/ad.service';
     AboutComponent,
     EditUserComponent,
     AdDirective,
-    AdBannerComponent
+    AdBannerComponent,
+    SizerComponent,
+    RandomUserComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,FormsModule
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [
+    AuthService,
+    AuthGuardService,
+    UserResolveService,
+    UserService,
+    adService,
+    RandomUser
   ],
-  providers: [AuthService, AuthGuardService, UserResolveService, UserService, adService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -10,6 +10,7 @@ import { AuthService } from './services/auth.services';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+  fontSizePx = 16;
   ads: AdItem[] = [];
   title = 'Routing';
   isButtonVisible = true;

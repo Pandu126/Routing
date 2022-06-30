@@ -12,13 +12,15 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {}
-  validate(uname: string, pwd:string) {
+  validate(uname:string, pwd:string) {
+  
+    console.log(uname, pwd);
     
     if (uname == "admin" && pwd == "admin") {
       this.authService.login();
       this.router.navigate(['/home']);
     } else {
-      alert('Enter Valid Credentials.');
+      // alert('Enter Valid Credentials.');
       this.invalid = true;
       // this.router.navigate(['login']);
     }
