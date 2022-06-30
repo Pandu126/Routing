@@ -14,6 +14,9 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { UserResolveService } from './services/user-resolve.service';
 import { UserService } from './services/user.service';
 import { FormsModule } from '@angular/forms';
+import { AdDirective } from './directives/ad.directive';
+import { AdBannerComponent } from './dynamicComponents/ad-banner.component';
+import { adService } from './services/ad.service';
 
 @NgModule({
   declarations: [
@@ -23,13 +26,15 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     CategoriesComponent,
     AboutComponent,
-    EditUserComponent
+    EditUserComponent,
+    AdDirective,
+    AdBannerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,FormsModule
   ],
-  providers: [AuthService, AuthGuardService, UserResolveService, UserService],
+  providers: [AuthService, AuthGuardService, UserResolveService, UserService, adService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,12 +1,13 @@
 <h2>login View</h2>
 
-<form action="" class="col-md-4">
+<form action="" class="col-md-4" (ngSubmit)="validate(userName.value, pwd.value)">
   <div class="form-outline mb-4">
-    <label class="form-label" for="emailInput">Email Address</label>
+    <label class="form-label" for="userNameInput">User Name</label>
     <input
-      type="email"
+      type="text"
       class="form-control"
-      placeholder=" Enter email address"
+      placeholder="Enter User Name"
+      #userName
       required
     />
   </div>
@@ -16,12 +17,19 @@
       type="password"
       class="form-control"
       placeholder="Enter your password"
+      #pwd
+      required
     />
   </div>
   <div>
     <a href="">Forgot Password?</a>
-    <button class="btn btn-primary" style="Float:right" (click)="loginClick()">
-      Login
-    </button>
+    <input
+      type="submit"
+      class="btn btn-primary"
+      style="float: right"
+    />
   </div>
 </form>
+<div *ngIf="invalid">
+    <p class="text text-center text-danger">Invalid username or password!!</p>
+  </div>

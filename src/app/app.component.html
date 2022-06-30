@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container my-2">
   <!-- <a routerLinkActive="active" routerLink="/login">Login</a> | -->
 
   <a routerLinkActive="active" routerLink="home">Home</a> |
@@ -9,13 +9,17 @@
 
   <a routerLinkActive="active" routerLink="/about">About</a>
 
-  
-
-  <div style="Float:right">
-    <button class="btn btn-primary mx-3" (click)="onLogInClick()">Login</button>
+  <div style="float: right">
+    <button *ngIf="isButtonVisible" class="btn btn-primary mx-3" (click)="onLogInClick()">Login</button>
 
     <button class="btn btn-danger" (click)="onLogoutClick()">Logout</button>
   </div>
   <hr />
-  <router-outlet></router-outlet>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+  <div class="my-3 mt-5 text-center">
+    <hr />
+    <ad-banner [ads]="ads"></ad-banner>
+  </div>
 </div>

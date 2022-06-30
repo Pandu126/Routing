@@ -5,15 +5,22 @@ import { AuthService } from '../services/auth.services';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  invalid: boolean = false;
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {}
-  loginClick() {
-    this.authService.login();
-    this.router.navigate(['home']);
+  validate(uname: string, pwd:string) {
+    
+    if (uname == "admin" && pwd == "admin") {
+      this.authService.login();
+      this.router.navigate(['/home']);
+    } else {
+      alert('Enter Valid Credentials.');
+      this.invalid = true;
+      // this.router.navigate(['login']);
+    }
   }
-
 }
