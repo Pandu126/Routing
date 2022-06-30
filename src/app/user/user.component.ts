@@ -13,7 +13,7 @@ export class UserComponent implements OnInit {
   // user:{id:string; name:string; age:number; gender:string};
   constructor() { }
   ngOnInit(): void {
-    console.log(this.editUserDetails);
+    // console.log(this.editUserDetails);
   }
 
   updateUserDetails(){

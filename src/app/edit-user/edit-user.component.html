@@ -2,7 +2,9 @@
 <div>
   <diV class="form-group">
     <label for="">Id:</label>
-    <input type="text" class="form-control" [(ngModel)]="editUserDetails.id" />
+    <input type="text" class="form-control" [(ngModel)]="editUserDetails.id" [readonly]="editUserDetails.id"/>
+    <input type="text" class="form-control" [(ngModel)]="editUserDetails.id"/>
+
   </diV>
   <diV class="form-group">
     <label for="">Name:</label>

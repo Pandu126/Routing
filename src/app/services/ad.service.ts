@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HeroJobAdComponent } from '../dynamicComponents/job-ad.component';
 import { profileComponent } from '../dynamicComponents/profile.component';
-import { Type } from '@angular/core';
+// import { Type } from '@angular/core';
+import { AdItem } from '../dynamicComponents/ad-item';
 
-class AdItem {
-  constructor(public component: Type<any>, public data: any) {}
-}
+
+// class AdItem {
+//   constructor(public component: Type<any>, public data: any) {}
+// }
 
 @Injectable()
 export class adService {
