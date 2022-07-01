@@ -17,8 +17,9 @@ export class RandomUserComponent implements OnInit {
   getPost(){
   this.randomUser.getPost().subscribe((res)=>{
       this.post=res;
-    console.log(this.post);
   });
-  // console.log(this.randomUser.getPost());
   } 
+  nextUser(){
+    this.getPost()
+  }
 }
