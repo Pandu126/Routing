@@ -1,9 +1,9 @@
 <div class="text-center">
-  <img style="border-radius: 50%" [src]="post?.picture?.medium" alt="NA" />
+  <img style="border-radius: 50%" [src]="profileDetails?.picture?.medium" alt="NA" />
 </div>
 
 <table
-  *ngIf="post"
+  *ngIf="profileDetails"
   class="table table-bordered table-striped table-danger table-hover"
 >
   <thead class="text-center text-primary">
@@ -14,25 +14,25 @@
       <td>Name</td>
       <td>
         {{
-          post?.name?.title + ". " + post?.name?.first + " " + post?.name?.last
+          profileDetails?.name?.title + ". " + profileDetails?.name?.first + " " + profileDetails?.name?.last
         }}
       </td>
     </tr>
     <tr>
       <td>Gender</td>
-      <td>{{ post?.gender | titlecase }}</td>
+      <td>{{ profileDetails?.gender | titlecase }}</td>
     </tr>
     <tr>
       <td>DOB</td>
-      <td>{{ post?.dob?.date | date }}</td>
+      <td>{{ profileDetails?.dob?.date | date }}</td>
     </tr>
     <tr>
       <td>Email</td>
-      <td>{{ post?.email }}</td>
+      <td>{{ profileDetails?.email }}</td>
     </tr>
     <tr>
       <td>Country</td>
-      <td>{{ post?.location?.country }}</td>
+      <td>{{ profileDetails?.location?.country }}</td>
     </tr>
   </tbody>
 </table>

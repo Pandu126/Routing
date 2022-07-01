@@ -12,23 +12,6 @@ interval:number;
     // this.getPost();
   }
   getPost() {
-    return this.http
-      .get('https://randomuser.me/api/')
-      .pipe(
-        map((response: any) => {
-    console.log(response) 
-     return response['results'][0]
-    //       let post = [];
-    //       for (let key in response) {
-    //         post.push({ ...response[key], key });
-    //       }
-    //       return post;
-        })
-      );
-  }
-  getAds() {
-    this.interval = window.setInterval(() => {
-      this.getPost();
-    }, 500);
+    return this.http.get('https://randomuser.me/api/')
   }
 }
