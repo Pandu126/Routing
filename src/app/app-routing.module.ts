@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path: 'randomUser',
     component: RandomUserComponent,
-    // canActivate: [AuthGuardService],
+    canActivate: [AuthGuardService],
   },
 
   { path: 'about', component: AboutComponent },
@@ -28,7 +28,7 @@ const routes: Routes = [
     path: 'editUser',
     component: EditUserComponent,
     resolve: { myVal: UserResolveService },
-    // canActivate: [AuthGuardService],
+    canActivate: [AuthGuardService],
   },
   {
     path: 'categories',
