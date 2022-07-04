@@ -36,4 +36,7 @@
     </tr>
   </tbody>
 </table>
-<button class="btn btn-info float-none" (click)="nextUser()">Next Profile ></button>
+<div class="float-right">
+<button class="btn btn-warning float-none" title="Freeze Current Profile!" (click)="freezeProfile()">Stop</button>
+<button class="btn btn-info float-none mx-2" title="Show the next Random profile!" (click)="getProfile()">Next Profile ></button>
+</div>

@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
   validate(uname:string, pwd:string) {
   
-    console.log(uname, pwd);
+    // console.log(uname, pwd);
     
     if (uname == "admin" && pwd == "admin") {
       this.authService.login();
